@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrockenITGuy | System Reboot</title>
+    <title>BrokenITGuy | System Reboot</title>
     <style>
+        /* --- NEW COLOR PALETTE FROM LOGO --- */
+        :root {
+            --primary-teal: #00A896;  /* From the 'N', loading bar, spine */
+            --alert-orange: #F2A900;  /* From the loading dot, impacts */
+            --text-cream: #F2E8D5;    /* From main 'BROKEN IT GUY' text */
+            --bg-black: #0d0d0d;
+        }
+
         body {
-            background-color: #0d0d0d;
-            color: #00ff41; /* Classic Hacker Green */
+            background-color: var(--bg-black);
+            color: var(--primary-teal);
             font-family: 'Courier New', Courier, monospace;
             display: flex;
             justify-content: center;
@@ -21,10 +29,24 @@
         .terminal-window {
             width: 100%;
             max-width: 600px;
-            border: 2px solid #00ff41;
+            border: 2px solid var(--primary-teal);
             padding: 30px;
-            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+            box-shadow: 0 0 15px rgba(0, 168, 150, 0.2);
             position: relative;
+            text-align: left;
+        }
+
+        /* Logo Styling */
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            /* Optional: adds a subtle glow to the logo matching the theme */
+            box-shadow: 0 0 10px rgba(0, 168, 150, 0.3);
         }
 
         /* Scanline effect */
@@ -44,32 +66,39 @@
 
         h1 {
             font-size: 1.5rem;
-            border-bottom: 1px dashed #00ff41;
+            border-bottom: 1px dashed var(--primary-teal);
             padding-bottom: 15px;
-            margin-top: 0;
+            margin-top: 20px;
+            color: var(--text-cream);
         }
 
         .log-entry {
             margin-bottom: 15px;
             line-height: 1.5;
+            color: var(--text-cream);
         }
 
         .highlight {
-            background-color: #00ff41;
-            color: #0d0d0d;
+            background-color: var(--primary-teal);
+            color: var(--bg-black);
             padding: 0 4px;
             font-weight: bold;
         }
 
+        .command-text {
+            color: var(--primary-teal);
+        }
+
         .status {
-            color: #ffff00; /* Yellow for warnings */
+            color: var(--alert-orange);
+            font-weight: bold;
         }
 
         .cursor {
             display: inline-block;
             width: 10px;
             height: 18px;
-            background-color: #00ff41;
+            background-color: var(--primary-teal);
             animation: blink 1s infinite;
             vertical-align: middle;
         }
@@ -81,67 +110,75 @@
 
         .social-links {
             margin-top: 30px;
-            border-top: 1px dashed #00ff41;
+            border-top: 1px dashed var(--primary-teal);
             padding-top: 20px;
         }
 
         a {
-            color: #00ff41;
+            color: var(--primary-teal);
             text-decoration: none;
-            border: 1px solid #00ff41;
+            border: 1px solid var(--primary-teal);
             padding: 8px 12px;
             margin-right: 10px;
             display: inline-block;
             margin-bottom: 10px;
             transition: all 0.3s ease;
+            font-weight: bold;
         }
 
         a:hover {
-            background-color: #00ff41;
-            color: #0d0d0d;
+            background-color: var(--primary-teal);
+            color: var(--bg-black);
+            box-shadow: 0 0 10px rgba(0, 168, 150, 0.5);
         }
     </style>
 </head>
 <body>
 
     <div class="terminal-window">
-        <h1>> ./BrockenITGuy.exe --reboot</h1>
+        
+        <div class="logo-container">
+            <img src="logo.png" alt="Broken IT Guy Logo" class="logo-img">
+        </div>
+
+        <h1>> ./BrokenITGuy.exe --reboot</h1>
         
         <div class="log-entry">
             <span class="status">[SYSTEM ALERT]</span> CRITICAL FAILURE DETECTED.
         </div>
         <div class="log-entry">
-            > Initiating emergency protocols...
+            <span class="command-text">></span> Initiating emergency protocols...
         </div>
         <div class="log-entry">
-            > User 'BrockenITGuy' is currently offline for critical maintenance.
+            <span class="command-text">></span> User 'BrokenITGuy' is currently offline for critical maintenance.
         </div>
         
         <br>
         
         <div class="log-entry">
             <strong>CURRENT TASKS:</strong><br>
-            [Loading] Physical_Health.dll... 34%<br>
-            [Loading] Career_Reboot.exe... 12%<br>
-            [Loading] Family_Network_Config... PENDING
+            [Loading] Physical_Health.dll... <span class="status">34%</span><br>
+            [Loading] Career_Reboot.exe... <span class="status">12%</span><br>
+            [Loading] Family_Network_Config... <span class="status">PENDING</span>
         </div>
 
         <br>
 
         <div class="log-entry">
-            > This site is a log of my total system restore. <br>
-            > Dealing with life, health, and tech.
+            <span class="command-text">></span> This site is a log of my total system restore. <br>
+            <span class="command-text">></span> Dealing with life, health, and tech.
         </div>
 
         <div class="log-entry">
-            > System coming back online soon...<span class="cursor"></span>
+            <span class="command-text">></span> System coming back online soon...<span class="cursor"></span>
         </div>
 
         <div class="social-links">
-            <div style="margin-bottom: 10px;">> FOLLOW THE LOGS:</div>
-            <a href="#" target="_blank">YOUTUBE</a>
-            <a href="#" target="_blank">TIKTOK</a>
-            <a href="#" target="_blank">EMAIL</a>
+            <div style="margin-bottom: 10px; color: var(--text-cream);">> CONNECT:</div>
+            
+            <a href="mailto:PUT_YOUR_EMAIL_HERE" target="_blank">EMAIL</a>
+            <a href="https://instagram.com/PUT_YOUR_USERNAME_HERE" target="_blank">INSTAGRAM</a>
+            
         </div>
     </div>
 
