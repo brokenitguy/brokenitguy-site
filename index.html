@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrokenITGuy | System Reboot</title>
     <style>
-        /* --- NEW COLOR PALETTE FROM LOGO --- */
+        /* --- COLOR PALETTE --- */
         :root {
-            --primary-teal: #00A896;  /* From the 'N', loading bar, spine */
-            --alert-orange: #F2A900;  /* From the loading dot, impacts */
-            --text-cream: #F2E8D5;    /* From main 'BROKEN IT GUY' text */
+            --primary-teal: #00A896;  
+            --alert-orange: #F2A900;  
+            --text-cream: #F2E8D5;    
             --bg-black: #0d0d0d;
         }
 
@@ -17,11 +17,13 @@
             background-color: var(--bg-black);
             background-image: url('background.png');
             
-            /* 'cover' ensures the image fills the screen */
+            /* 'cover' ensures the image fills the rest of the screen */
             background-size: cover;
             
-            /* 'left center' pins the spine to the left edge so it's never cut off */
-            background-position: left center;
+            /* CHANGED: '50px' moves the image to the right, creating the gap. 
+               'no-repeat' ensures we don't see a duplicate image in that gap. */
+            background-position: 50px center;
+            background-repeat: no-repeat;
             
             background-attachment: fixed;
             color: var(--text-cream);
@@ -34,26 +36,14 @@
         }
 
         .terminal-window {
-            background-color: rgba(10, 10, 10, 0.9); /* 90% opacity (slightly see-through) */
+            background-color: rgba(10, 10, 10, 0.9);
             padding: 40px;
             border-radius: 5px;
             box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
             max-width: 600px;
             width: 100%;
             border: 2px solid var(--primary-teal);
-        }
-
-        /* Logo Styling */
-        .logo-container {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .logo-img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            /* Optional: adds a subtle glow to the logo matching the theme */
-            box-shadow: 0 0 10px rgba(0, 168, 150, 0.3);
+            position: relative; /* For scanlines */
         }
 
         /* Scanline effect */
@@ -61,15 +51,15 @@
             content: " ";
             display: block;
             position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
+            top: 0; left: 0; bottom: 0; right: 0;
             background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
             z-index: 2;
             background-size: 100% 2px, 3px 100%;
             pointer-events: none;
         }
+
+        .logo-container { text-align: center; margin-bottom: 20px; }
+        .logo-img { max-width: 100%; height: auto; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 168, 150, 0.3); }
 
         h1 {
             font-size: 1.5rem;
@@ -79,76 +69,42 @@
             color: var(--text-cream);
         }
 
-        .log-entry {
-            margin-bottom: 15px;
-            line-height: 1.5;
-            color: var(--text-cream);
-        }
-
-        .highlight {
-            background-color: var(--primary-teal);
-            color: var(--bg-black);
-            padding: 0 4px;
-            font-weight: bold;
-        }
-
-        .command-text {
-            color: var(--primary-teal);
-        }
-
-        .status {
-            color: var(--alert-orange);
-            font-weight: bold;
-        }
+        .log-entry { margin-bottom: 15px; line-height: 1.5; color: var(--text-cream); }
+        .highlight { background-color: var(--primary-teal); color: var(--bg-black); padding: 0 4px; font-weight: bold; }
+        .command-text { color: var(--primary-teal); }
+        .status { color: var(--alert-orange); font-weight: bold; }
 
         .cursor {
-            display: inline-block;
-            width: 10px;
-            height: 18px;
+            display: inline-block; width: 10px; height: 18px;
             background-color: var(--primary-teal);
-            animation: blink 1s infinite;
-            vertical-align: middle;
+            animation: blink 1s infinite; vertical-align: middle;
         }
 
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+        /* Social Media Section */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 30px;
+            border-top: 1px dashed var(--primary-teal);
+            padding-top: 20px;
         }
 
-        .terminal-window {
-            background-color: rgba(10, 10, 10, 0.9); /* 90% opacity (slightly see-through) */
-            padding: 40px;
-            border-radius: 5px;
-            box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
-            max-width: 600px;
-            width: 100%;
-            border: 2px solid var(--primary-teal);
+        .social-links a {
+            color: var(--primary-teal);
+            text-decoration: none;
+            border: 1px solid var(--primary-teal);
+            padding: 8px 10px;
+            font-size: 11px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            display: inline-block;
         }
 
-/* 1. The Container: Forces buttons into a single line */
-    .social-links {
-        display: flex;
-        justify-content: center; /* Centers the row */
-        flex-wrap: wrap;         /* wraps if screen is tiny */
-        gap: 10px;               /* Space between buttons */
-        margin-top: 30px;
-        border-top: 1px dashed var(--primary-teal);
-        padding-top: 20px;
-    }
-
-    /* 2. The Buttons: Styles the links themselves */
-    .social-links a {
-        color: var(--primary-teal);
-        text-decoration: none;
-        border: 1px solid var(--primary-teal);
-        padding: 8px 10px;
-        font-size: 11px;
-        transition: all 0.3s ease;
-        font-weight: bold;
-        display: inline-block;
-    }
-
-        a:hover {
+        .social-links a:hover {
             background-color: var(--primary-teal);
             color: var(--bg-black);
             box-shadow: 0 0 10px rgba(0, 168, 150, 0.5);
@@ -196,15 +152,13 @@
         </div>
 
         <div class="social-links">
-            <div style="margin-bottom: 10px; color: var(--text-cream);">> CONNECT:</div>
+            <div style="margin-bottom: 10px; color: var(--text-cream); width: 100%; text-align: center;">> CONNECT:</div>
             
             <a href="mailto:brokenitguy@proton.me">EMAIL</a>
-            
-            <a href="https://instagram.com/brokenitguy" target="_blank">INSTAGRAM</a>
-            <a href="https://youtube.com/@BrokenITGuy" target="_blank">YOUTUBE</a>
-            <!-- <a href="https://tiktok.com/@brokenitguy" target="_blank">TIKTOK</a> -->
-            <a href="https://x.com/BrokenITGuy_" target="_blank">X (TWITTER)</a>
-            <a href="https://facebook.com/brokenitguy" target="_blank">FACEBOOK</a>
+            <a href="[https://instagram.com/brokenitguy](https://instagram.com/brokenitguy)" target="_blank">INSTAGRAM</a>
+            <a href="[https://youtube.com/@BrokenITGuy](https://youtube.com/@BrokenITGuy)" target="_blank">YOUTUBE</a>
+            <a href="[https://x.com/BrokenITGuy](https://x.com/BrokenITGuy)_" target="_blank">X (TWITTER)</a>
+            <a href="[https://facebook.com/brokenitguy](https://facebook.com/brokenitguy)" target="_blank">FACEBOOK</a>
             
         </div>
     </div>
