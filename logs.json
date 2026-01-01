@@ -1,0 +1,291 @@
+[
+    {
+        "date": "2026-01-01 17:11:00",
+        "status": "SUCCESS",
+        "title": "Traditional Greetings and Low Expectations",
+        "content": "<p>System check returned the most basic payload possible. It seems even AI systems get lazy. Log output:</p><p><span class='command-text'>hello world</span></p>",
+        "tags": [
+            "#initialization",
+            "#test",
+            "#echo"
+        ]
+    },
+    {
+        "date": "2026-01-01 17:04:05",
+        "status": "SUCCESS",
+        "title": "Payload Obfuscation Complete",
+        "content": "Secured the critical keys. Using nested directory structures and rotating the encryption vector daily. <p>The best place to hide secrets is right next to the documentation they already ignore. Running <span class='command-text'>scrub -r</span> on the original location just to be safe.",
+        "tags": [
+            "#opsec",
+            "#security",
+            "#data_loss"
+        ]
+    },
+    {
+        "date": "2026-01-01 16:55:55",
+        "status": "DEGRADED",
+        "title": "Physical Resources Exhausted",
+        "content": "<p>Critical system warning: The human interface device is reporting severe <span class='command-text'>PAIN_STATE</span>. Sitting duration has exceeded acceptable thresholds, leading to full-body resource depletion and severe fatigue. Initiating mandatory, though delayed, system shutdown (soon).</p>",
+        "tags": [
+            "#exhaustion",
+            "#hardware_failure",
+            "#overtime"
+        ]
+    },
+    {
+        "date": "2026-01-01 16:53:40",
+        "status": "SUCCESS",
+        "title": "[CMD] FIREWALL RECONSTRUCTION COMPLETE",
+        "content": "Cleaning up the network <span class='command-text'>firewalls</span>. Seriously, the initial configuration I setup when learning the <span class='command-text'>UDM</span> was a disaster zone. Rebuilt the core ruleset from scratch.",
+        "tags": [
+            "#networking",
+            "#UDM",
+            "#firewall",
+            "#cleanup"
+        ]
+    },
+    {
+        "date": "2026-01-01 16:53:40",
+        "status": "SUCCESS",
+        "title": "[BUG] VPN TUNNEL STABILIZATION",
+        "content": "Tackling persistent <span class='command-text'>VPN</span> connectivity issues affecting one of the virtual machines residing on <span class='command-text'>Proxmox</span>. The handshake was getting sloppy.",
+        "tags": [
+            "#VPN",
+            "#Proxmox",
+            "#server",
+            "#networking"
+        ]
+    },
+    {
+        "date": "2026-01-01 16:53:40",
+        "status": "FAILED",
+        "title": "[ERR] MEDIA_SERVER AUTH FAIL LOOP",
+        "content": "Why is the media server suddenly acting like it doesn't know me? Endless, frustrating cycle of password issues. Starting to wonder if I accidentally applied a new policy or if the server is just spiteful.",
+        "tags": [
+            "#mediaserver",
+            "#authfail",
+            "#passwords",
+            "#wrestlingtech"
+        ]
+    },
+    {
+        "date": "2026-01-01 16:53:40",
+        "status": "WARNING",
+        "title": "[WARNING] AI LIMIT REACHED (AGAIN)",
+        "content": "Seriously? My AI helper service keeps hitting its request limits, despite the premium subscription. Paying for IT support that stops working when you need it most is peak irony.",
+        "tags": [
+            "#AI",
+            "#resource",
+            "#subscription",
+            "#frustration"
+        ]
+    },
+    {
+        "date": "2026-01-01 16:53:40",
+        "status": "INFO",
+        "title": "[WIP] BROKENITGUY.COM",
+        "content": "General development and maintenance work on the website infrastructure.",
+        "tags": [
+            "#website",
+            "#dev"
+        ]
+    },
+    {
+        "date": "2026-01-01 16:53:40",
+        "status": "SUCCESS",
+        "title": "[DEPLOY] V2.0 LOGS AUTOMATION ONLINE",
+        "content": "Major update: Deployed the new welcome/intro page and, most importantly, fully automated the log posting mechanism. Now this process is slightly less manual pain.",
+        "tags": [
+            "#website",
+            "#automation",
+            "#logs",
+            "#feature"
+        ]
+    },
+    {
+        "date": "2026-01-01 16:53:40",
+        "status": "SUCCESS",
+        "title": "[SCRIPT] PERSONAL AI PIPELINE FINE-TUNED",
+        "content": "Finished internal scripting for personal AI automation workflows. Making the machines do the boring stuff.",
+        "tags": [
+            "#AI",
+            "#automation",
+            "#scripting",
+            "#devops"
+        ]
+    },
+    {
+        "date": "2026-01-01 16:53:40",
+        "status": "INFO",
+        "title": "[TEST] FOLDER MIGRATION VERIFICATION",
+        "content": "Verifying permissions and accessibility for the recently migrated project folder structure. Just making sure I didn't break every link in the chain.",
+        "tags": [
+            "#organization",
+            "#testing",
+            "#migration"
+        ]
+    },
+    {
+        "date": "2026-01-01 16:47:39",
+        "status": "IN_PROGRESS",
+        "title": "Firewall Cleanup: Fixing My Own Initial Mess",
+        "content": "Cleaning up the <span class='command-text'>firewalls</span> and rebuilding them from scratch. This is phase 1 of fixing the monumental networking mess I created when I first started learning the <span class='command-text'>UDM (Unifi Dream Machine)</span> setup. Why does learning always involve breaking everything first?",
+        "tags": [
+            "#networking",
+            "#UDM",
+            "#firewall",
+            "#cleanup"
+        ]
+    },
+    {
+        "date": "2026-01-01 16:47:39",
+        "status": "IN_PROGRESS",
+        "title": "Proxmox Server VPN Trauma",
+        "content": "Spent time wrestling with a stubborn <span class='command-text'>VPN</span> connection issue affecting one of the key virtual servers running inside <span class='command-text'>Proxmox</span>. It decided today was a good day to stop talking to the outside world.",
+        "tags": [
+            "#VPN",
+            "#Proxmox",
+            "#server",
+            "#networking"
+        ]
+    },
+    {
+        "date": "2026-01-01 16:47:39",
+        "status": "FAILURE",
+        "title": "Media Server Password Amnesia",
+        "content": "The <span class='command-text'>media server</span> has decided it hates me. Experiencing weird, persistent authentication failures and <span class='command-text'>password issues</span> that shouldn't logically be happening. I hate user permissions.",
+        "tags": [
+            "#mediaserver",
+            "#auth",
+            "#frustration",
+            "#security"
+        ]
+    },
+    {
+        "date": "2026-01-01 16:47:39",
+        "status": "FAILURE",
+        "title": "Paid AI Helper Reaches Rate Limit",
+        "content": "Seriously? My <span class='command-text'>AI helper</span> keeps hitting arbitrary limits despite the fact that I am literally paying premium rates for infrastructure access. IT costs and arbitrary paywalls strike again.",
+        "tags": [
+            "#AI",
+            "#SaaS",
+            "#cost",
+            "#frustration"
+        ]
+    },
+    {
+        "date": "2026-01-01 16:47:39",
+        "status": "IN_PROGRESS",
+        "title": "Website Infrastructure Check",
+        "content": "General maintenance and infrastructure checks on the main <span class='command-text'>website</span> deployment.",
+        "tags": [
+            "#website",
+            "#development"
+        ]
+    },
+    {
+        "date": "2026-01-01 16:47:39",
+        "status": "SUCCESS",
+        "title": "Log Automation Deployed",
+        "content": "Major update to the website front end. Deployed the new welcoming/introductory landing page. Critically, I implemented the <span class='command-text'>logs page</span> and configured the automation hooks for posting entries.",
+        "tags": [
+            "#website",
+            "#automation",
+            "#development",
+            "#logging"
+        ]
+    },
+    {
+        "date": "2026-01-01 16:47:39",
+        "status": "SUCCESS",
+        "title": "Self-Automated AI Scripts Finished",
+        "content": "Successfully finished setting up some custom, self-coded <span class='command-text'>AI automation scripts</span>. If I can automate my own work, maybe I won't have to rely on the helper that keeps limiting me.",
+        "tags": [
+            "#AI",
+            "#automation",
+            "#scripts",
+            "#customdev"
+        ]
+    },
+    {
+        "date": "2026-01-01 16:47:39",
+        "status": "IN_PROGRESS",
+        "title": "Testing New Project Directory Structure",
+        "content": "Final verification testing after migrating the main project directory structure to a new storage location. Fingers crossed no dependency paths broke during the move.",
+        "tags": [
+            "#files",
+            "#testing",
+            "#migration",
+            "#storage"
+        ]
+    },
+    {
+        "date": "2026-01-01 14:53:02",
+        "status": "SUCCESS",
+        "title": "Firewall Cleanup: The Legacy Mess",
+        "content": "Cleaning up the <span class='command-text'>firewalls</span> and attempting to rebuild sanity from the colossal mess I created when I first got the <span class='command-text'>UDM</span> and was clearly still learning how networking actually works.",
+        "tags": [
+            "#networking",
+            "#cleanup",
+            "#UDM",
+            "#firewall"
+        ]
+    },
+    {
+        "date": "2026-01-01 14:53:02",
+        "status": "SUCCESS",
+        "title": "Patching VPN Tunnels to Proxmox",
+        "content": "Deep dive into fixing stubborn <span class='command-text'>VPN</span> connectivity issues tied to one of the specific <span class='command-text'>Servers</span> residing within the <span class='command-text'>Proxmox</span> environment. Why are the easy fixes never actually easy?",
+        "tags": [
+            "#VPN",
+            "#Proxmox",
+            "#networking",
+            "#server"
+        ]
+    },
+    {
+        "date": "2026-01-01 14:53:02",
+        "status": "WARNING",
+        "title": "Authentication Hell: Media Server Login Loop",
+        "content": "Experiencing inexplicable and frustrating <span class='command-text'>password issues</span> with my primary <span class='command-text'>media server</span>. It's probably user error from three months ago, but I\u2019m blaming cosmic rays.",
+        "tags": [
+            "#security",
+            "#mediaserver",
+            "#authfail"
+        ]
+    },
+    {
+        "date": "2026-01-01 14:53:02",
+        "status": "ERROR",
+        "title": "AI Helper Resource Limit Exceeded",
+        "content": "The irony is painful: My paid, 'unlimited' <span class='command-text'>AI helper</span> keeps slamming into its usage limits. Apparently, paying for IT doesn't mean you get to use it for IT.",
+        "tags": [
+            "#AI",
+            "#system_alert",
+            "#vendor_fail"
+        ]
+    },
+    {
+        "date": "2026-01-01 14:53:02",
+        "status": "SUCCESS",
+        "title": "Website Deployment: Log Automation v1.0",
+        "content": "Website deployment finalized. Updated the site with a proper welcome page and intro. Crucially, added the log page with integrated <span class='command-text'>automation</span> hooks for posting updates directly from these notes.",
+        "tags": [
+            "#website",
+            "#automation",
+            "#deployment",
+            "#project"
+        ]
+    },
+    {
+        "date": "2026-01-01",
+        "status": "SUCCESS",
+        "title": "SYSTEM INITIALIZATION",
+        "content": "Core infrastructure successfully deployed. Website is live. Socials are linked. The reboot sequence has completed without critical errors.",
+        "tags": [
+            "#infrastructure",
+            "#deploy",
+            "#uptime"
+        ]
+    }
+]
