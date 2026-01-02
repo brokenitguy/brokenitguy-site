@@ -158,3 +158,32 @@ I am documenting this mess live. If you want to see me break things (and occasio
 ---
 
 *© 2026 BrokenITguy Infrastructure. All rights reserved. No servers were harmed in the making of this README, but several coffees were destroyed.*
+
+## 🤖 Automated "Headless" Pipeline
+
+This project uses a custom local CI/CD pipeline that functions as a "Headless CMS." It allows for instant site updates via a single terminal command, removing the need for manual Git operations or file editing.
+
+### 🏗 Architecture
+The system consists of three main components:
+1.  **The Trigger (`note`):** A custom Zsh function that appends text to a local "watch file."
+2.  **The Watcher (`watcher.py`):** A Python script running as a background daemon that monitors file system events.
+3.  **The Broadcaster (`feed.xml`):** An auto-generated RSS feed used to trigger downstream social media automation (via Make.com).
+
+### 🔄 Workflow
+1.  **User Input:** Run `note "Log entry content"` from any terminal window.
+2.  **Detection:** The background service detects the modification to `what i am doing.txt`.
+3.  **Processing:**
+    * Parses the raw text into the `logs.json` database.
+    * Generates a fresh `feed.xml` for RSS readers and automation bots.
+4.  **Deployment:** The script automatically adds, commits, and pushes changes to GitHub.
+5.  **Status:** The live site updates within 30 seconds.
+
+### ⚙️ Setup & Configuration
+
+**1. Zsh Alias**
+Added to `~/.zshrc` to enable the quick-entry command:
+```bash
+function note() {
+    echo "$1" >> "/Users/hugod/projects/brokenitguy/brokenitguy-site/what i am doing.txt"
+    echo "✅ Log entry saved."
+}
