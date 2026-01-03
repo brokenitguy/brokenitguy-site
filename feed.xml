@@ -7,6 +7,12 @@
  <language>en-us</language>
  <item>
   <title>Update: No Date</title>
+  <description>All social media links have been successfully updated on the page.<br>This update ensures all platforms are correctly linked.</description>
+  <link>https://brokenitguy.com</link>
+  <guid></guid>
+ </item>
+ <item>
+  <title>Update: No Date</title>
   <description>Addressing issues with the homepage and organizing social media integration. A challenging but necessary task.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
@@ -56,12 +62,6 @@
  <item>
   <title>Update: No Date</title>
   <description>Non-IT critical system failure: My personal mobility unit (aka the terrible car) requires mandatory, expensive maintenance.<br>I spent the morning playing financial Tetris, scheduling repairs, and praying the parts don't cost more than my entire Proxmox budget. The real world keeps injecting mandatory financial dependencies into my architecture. The lab build might have to wait while I fund this legacy hardware upgrade. This is far more stressful than debugging LVM issues.</description>
-  <link>https://brokenitguy.com</link>
-  <guid></guid>
- </item>
- <item>
-  <title>Update: No Date</title>
-  <description>Took the plunge and exposed the current state of my project to the public internet. The GitHub repo is now live. <br>I crafted a detailed README, which is essentially a preemptive apology note for the horrific commit history. Opened the Discussion tab, because misery loves company. It’s vulnerable. Like me, but without the titanium reinforcement.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
  </item>
