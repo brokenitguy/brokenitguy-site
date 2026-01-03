@@ -1,8 +1,8 @@
 [
     {
         "timestamp": "2026-01-03 13:14:32",
-        "content": "Tested the full pipeline via terminal command.",
-        "category": "Testing",
+        "content": "Testing the full pipeline via terminal command.",
+        "category": "General",
         "raw_input": "[2026-01-03 13:14:32] Testing the full pipeline via terminal command."
     },
     {
