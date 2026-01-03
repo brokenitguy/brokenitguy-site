@@ -186,3 +186,100 @@ Added to `~/.zshrc` to enable the quick-entry command:
 function note() {
     echo "$1" >> "/Users/hugod/projects/brokenitguy/brokenitguy-site/what i am doing.txt"
     echo "✅ Log entry saved."
+
+# 💀 BrokenITGuy | System Reboot
+
+> **System Status: ONLINE**
+> **Last Updated:** January 3, 2026 @ 16:50 EST
+
+This is the personal landing page for **BrokenITGuy**. The site is designed around the concept of a "Hard Reset"—paralleling a journey of physical recovery (spinal fusion surgery) with a professional career reboot in the tech industry.
+
+The aesthetic merges **biological fragility** (X-rays, organic curves) with **digital rigidity** (Terminal lines, server racks, monospace fonts).
+
+---
+
+## 🏗️ Architecture & Tech Stack
+
+This site is built to be lightweight, automated, and maintenance-free so I can focus on the backend lab work.
+
+| Component | Technology | Description |
+| :--- | :--- | :--- |
+| **Frontend** | HTML5 / CSS3 | "Matrix/Terminal" aesthetic with scanlines and glow effects. No heavy JS frameworks. |
+| **Hosting** | GitHub Pages | Static hosting directly from this repo. |
+| **Automation** | Python 3 + Watchdog | Background daemon (`watcher.py`) that monitors file changes. |
+| **AI Logic** | Google Gemini 2.5 | Parses raw text notes into structured JSON logs via `update.py`. |
+| **Syndication**| XML / RSS | Auto-generates `feed.xml` for downstream social media tools. |
+| **Versioning** | Git / GitHub | Automated pushes via the headless pipeline. |
+
+---
+
+## 🤖 The "Headless" Automation Pipeline
+
+I no longer run manual Git commands. The site updates itself the moment I save my notes.
+
+### How it works (The "Zero-Touch" Workflow):
+1.  **The Trigger:** A Python script (`watcher.py`) runs in the background, monitoring the local file `what i am doing.txt`.
+2.  **The Event:** When I save that text file (Ctrl+S), the watcher detects the change (debounced to prevent double-fires).
+3.  **The Processor (`update.py`):**
+    * Reads the new raw text.
+    * Sends it to **Google Gemini (Flash-Lite)** to extract a Title, Context, and Tags.
+    * Formats the output into a clean JSON entry in `logs.json`.
+    * **NEW:** Generates/Updates an RSS `feed.xml` file for social media integrations.
+4.  **The Deployment:** The script automatically runs `git add`, `git commit`, and `git push` to GitHub.
+5.  **Result:** The live site and RSS feed update in < 30 seconds without me touching a terminal.
+
+---
+
+## 🎨 Design System & Theme
+
+The UI is built to mimic an old-school CRT terminal monitor sitting in a modern data center.
+
+### 1. The Color Palette
+We use a high-contrast dark mode palette derived directly from the personal logo:
+
+* **`#0d0d0d` (Void Black)**: The background canvas. Darker than standard black to reduce eye strain.
+* **`#00A896` (Primary Teal)**: Represents the "System/Tech." Used for borders, command prompts, and hardware elements.
+* **`#F2A900` (Alert Orange)**: Represents "Caution/Work in Progress." Used for system alerts and loading bars.
+* **`#F2E8D5` (Text Cream)**: Represents the "Human" element. Used for reading text (softer than pure white).
+
+### 2. The Visuals
+* **Background**: Composite image merging a spinal fusion X-ray with a server rack data stream.
+* **Scanlines**: CSS overlay creating a subtle "interlaced video" effect.
+* **Transparency**: The terminal window uses 90% opacity, revealing the "tech backbone" behind the interface.
+
+---
+
+## 🚀 Website Roadmap (Repository Goals)
+*Tasks specifically related to the development of this website and its automation.*
+
+- [x] **Phase 1:** Site Infrastructure & Automation (Completed Jan 2026)
+- [x] **Phase 2:** "Headless" Watcher & RSS Implementation (Completed)
+- [ ] **Phase 3:** Social Media Integration (Make.com "Hub & Spoke" Architecture)
+- [ ] **Phase 4:** Daily "Two-Beat" Routine (1 PM / 10 PM Summarization Logic)
+- [ ] **Phase 5:** AI Video Engine (Automated TikTok/Shorts generation)
+
+---
+
+## 🧪 The Lab (The Subject Matter)
+*This website exists to document the following active Home Lab projects:*
+
+* **Networking:** UDM Firewall Ruleset Purge & Rebuild.
+* **Infrastructure:** Proxmox High Availability Cluster.
+* **Virtualization:** Cisco Router Virtualization (C8000V).
+* **Storage:** "The Big Migration" (Moving 40TB ZFS Pool).
+
+---
+
+## 🤝 Connect
+
+I am documenting this mess live. If you want to see me break things (and occasionally fix them), follow the feeds:
+
+* 🌐 **Website:** [brokenitguy.com](https://brokenitguy.com)
+* 📡 **RSS Feed:** [brokenitguy.com/feed.xml](https://brokenitguy.com/feed.xml)
+* 👔 **LinkedIn:** [Hugo D.](https://www.linkedin.com/)
+* 🐦 **X (Twitter):** [@brokenitguy](https://x.com/brokenitguy)
+* 📘 **Facebook:** [BrokenITguy](https://facebook.com/brokenitguy)
+
+---
+
+*© 2026 BrokenITguy Infrastructure. All rights reserved. No servers were harmed in the making of this README, but several coffees were destroyed.*
