@@ -7,6 +7,12 @@
  <language>en-us</language>
  <item>
   <title>Update: No Date</title>
+  <description>The developer has announced a temporary break from coding due to severe back pain.<br>The current status of the project might be affected.</description>
+  <link>https://brokenitguy.com</link>
+  <guid></guid>
+ </item>
+ <item>
+  <title>Update: No Date</title>
   <description>All social media links have been successfully updated on the page.<br>This update ensures all platforms are correctly linked.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
@@ -56,12 +62,6 @@
  <item>
   <title>Update: No Date</title>
   <description>The version control Gods demanded a blood sacrifice, and I almost gave them my last remaining shreds of patience. Git sync was acting like it had a titanium shard lodged in its cache.<br><br>Hours spent arguing with the upstream repository. It’s like wrestling a digital octopus—you fix three tentacles and the fourth hits you in the face.<br><br>But the line of commits is finally clean. The pipeline, which was flashing angry red error codes like a critical spine warning, is now green. We are live. The deployment is complete.<br><br>I should celebrate this glorious victory over automation, but my lumbar region just threw up an EADDRINUSE error, so I’m going to go lie down before I commit catastrophic hardware failure.</description>
-  <link>https://brokenitguy.com</link>
-  <guid></guid>
- </item>
- <item>
-  <title>Update: No Date</title>
-  <description>Non-IT critical system failure: My personal mobility unit (aka the terrible car) requires mandatory, expensive maintenance.<br>I spent the morning playing financial Tetris, scheduling repairs, and praying the parts don't cost more than my entire Proxmox budget. The real world keeps injecting mandatory financial dependencies into my architecture. The lab build might have to wait while I fund this legacy hardware upgrade. This is far more stressful than debugging LVM issues.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
  </item>
