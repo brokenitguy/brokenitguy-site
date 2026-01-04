@@ -7,6 +7,12 @@
  <language>en-us</language>
  <item>
   <title>Update: No Date</title>
+  <description>Taking a break to play some games and relax</description>
+  <link>https://brokenitguy.com</link>
+  <guid></guid>
+ </item>
+ <item>
+  <title>Update: No Date</title>
   <description>The developer has announced a temporary break from coding due to severe back pain.<br>The current status of the project might be affected.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
@@ -56,12 +62,6 @@
  <item>
   <title>Update: No Date</title>
   <description>The machine has reached an uncomfortable level of self-sufficiency. 'Headless Mode' is confirmed, which means I no longer have to risk bending my geriatric, titanium-reinforced spine just to see a damn console.<br><br>The lab is now 'fully automated.' This is excellent news because I hate doing repetitive tasks. It is also deeply unsettling. I built this monster to help me, but the moment it stops needing its creator is the moment I start sleeping with a fire extinguisher nearby. Success confirmed, but paranoia levels are spiking.</description>
-  <link>https://brokenitguy.com</link>
-  <guid></guid>
- </item>
- <item>
-  <title>Update: No Date</title>
-  <description>The version control Gods demanded a blood sacrifice, and I almost gave them my last remaining shreds of patience. Git sync was acting like it had a titanium shard lodged in its cache.<br><br>Hours spent arguing with the upstream repository. It’s like wrestling a digital octopus—you fix three tentacles and the fourth hits you in the face.<br><br>But the line of commits is finally clean. The pipeline, which was flashing angry red error codes like a critical spine warning, is now green. We are live. The deployment is complete.<br><br>I should celebrate this glorious victory over automation, but my lumbar region just threw up an EADDRINUSE error, so I’m going to go lie down before I commit catastrophic hardware failure.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
  </item>
