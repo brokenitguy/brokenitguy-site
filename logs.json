@@ -1,5 +1,16 @@
 [
     {
+        "date": "2026-01-04 13:07:21",
+        "status": "INFO",
+        "title": "Homelab Focus: Media Server Rework",
+        "content": "Taking a break from automation and website development to focus on the homelab.<br>Currently working on getting the media server operational.",
+        "tags": [
+            "#homelab",
+            "#mediaserver",
+            "#personalproject"
+        ]
+    },
+    {
         "date": "2026-01-03 21:59:20",
         "status": "SUCCESS",
         "title": "Ice Cream Base Prep",
