@@ -1,5 +1,16 @@
 [
     {
+        "date": "2026-01-06 12:11:01",
+        "status": "FAILED",
+        "title": "Personal Leave of Absence",
+        "content": "Developer took a personal leave of absence due to physical discomfort and lack of focus.<br>Normal operations will resume shortly.",
+        "tags": [
+            "#personal",
+            "#leave",
+            "#unavailable"
+        ]
+    },
+    {
         "date": "2026-01-04 14:00:23",
         "status": "SUCCESS",
         "title": "Plex is Acting Up",
