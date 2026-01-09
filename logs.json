@@ -1,5 +1,17 @@
 [
     {
+        "date": "2026-01-09 16:06:42",
+        "status": "SUCCESS",
+        "title": "Addressing AI Accusations Policy at TNCA",
+        "content": "Sent an email to the TNCA school principal regarding the policy on AI usage accusations.<br>The current policy allows teachers to accuse students of AI use without proof.<br>Students facing three such accusations risk expulsion, a policy deemed problematic.",
+        "tags": [
+            "#policy",
+            "#education",
+            "#ai",
+            "#tnca"
+        ]
+    },
+    {
         "date": "2026-01-09 12:36:11",
         "status": "SUCCESS",
         "title": "Tackling the Plex Server",

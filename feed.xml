@@ -7,6 +7,12 @@
  <language>en-us</language>
  <item>
   <title>Update: No Date</title>
+  <description>Sent an email to the TNCA school principal regarding the policy on AI usage accusations.<br>The current policy allows teachers to accuse students of AI use without proof.<br>Students facing three such accusations risk expulsion, a policy deemed problematic.</description>
+  <link>https://brokenitguy.com</link>
+  <guid></guid>
+ </item>
+ <item>
+  <title>Update: No Date</title>
   <description>Posted on social media to announce a few days have passed.<br>Initiating work on the Plex server.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
@@ -56,12 +62,6 @@
  <item>
   <title>Update: No Date</title>
   <description>Addressing issues with the homepage and organizing social media integration. A challenging but necessary task.</description>
-  <link>https://brokenitguy.com</link>
-  <guid></guid>
- </item>
- <item>
-  <title>Update: No Date</title>
-  <description>System is now location agnostic. <br> Users can now update from any location.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
  </item>
