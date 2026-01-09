@@ -1,5 +1,16 @@
 [
     {
+        "date": "2026-01-09 12:36:11",
+        "status": "SUCCESS",
+        "title": "Tackling the Plex Server",
+        "content": "Posted on social media to announce a few days have passed.<br>Initiating work on the Plex server.",
+        "tags": [
+            "#socialmedia",
+            "#plex",
+            "#server"
+        ]
+    },
+    {
         "date": "2026-01-06 12:11:01",
         "status": "FAILED",
         "title": "Personal Leave of Absence",
