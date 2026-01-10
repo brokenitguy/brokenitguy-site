@@ -7,6 +7,12 @@
  <language>en-us</language>
  <item>
   <title>Update: No Date</title>
+  <description>Investigating intermittent issues with AT&T network connectivity.<br>Initial reports indicate a potential network congestion event impacting service reliability.</description>
+  <link>https://brokenitguy.com</link>
+  <guid></guid>
+ </item>
+ <item>
+  <title>Update: No Date</title>
   <description>Sent an email to the TNCA school principal regarding the policy on AI usage accusations.<br>The current policy allows teachers to accuse students of AI use without proof.<br>Students facing three such accusations risk expulsion, a policy deemed problematic.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
@@ -56,12 +62,6 @@
  <item>
   <title>Update: No Date</title>
   <description>All social media links have been successfully updated on the page.<br>This update ensures all platforms are correctly linked.</description>
-  <link>https://brokenitguy.com</link>
-  <guid></guid>
- </item>
- <item>
-  <title>Update: No Date</title>
-  <description>Addressing issues with the homepage and organizing social media integration. A challenging but necessary task.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
  </item>
