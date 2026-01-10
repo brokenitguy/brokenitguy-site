@@ -7,6 +7,12 @@
  <language>en-us</language>
  <item>
   <title>Update: No Date</title>
+  <description>The development server has been reset and is being re-initialized. This action was taken due to persistent, unidentified issues preventing functionality.<br>The previous state could not be salvaged.</description>
+  <link>https://brokenitguy.com</link>
+  <guid></guid>
+ </item>
+ <item>
+  <title>Update: No Date</title>
   <description>Experiencing persistent difficulties in configuring server networking.<br>Each attempted resolution is met with new, unforeseen issues, halting progress.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
@@ -56,12 +62,6 @@
  <item>
   <title>Update: No Date</title>
   <description>Taking a break to play some games and relax</description>
-  <link>https://brokenitguy.com</link>
-  <guid></guid>
- </item>
- <item>
-  <title>Update: No Date</title>
-  <description>The developer has announced a temporary break from coding due to severe back pain.<br>The current status of the project might be affected.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
  </item>
