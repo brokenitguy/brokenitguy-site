@@ -7,6 +7,12 @@
  <language>en-us</language>
  <item>
   <title>Update: No Date</title>
+  <description>Successfully resolved lingering networking and VPN issues. <br>Leveraged AI assistance through iterative prompting to achieve a functional state for these services.</description>
+  <link>https://brokenitguy.com</link>
+  <guid></guid>
+ </item>
+ <item>
+  <title>Update: No Date</title>
   <description>Initiated a new approach for the media server utilizing Docker.<br>Initial deployment successful.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
@@ -56,12 +62,6 @@
  <item>
   <title>Update: No Date</title>
   <description>Posted on social media to announce a few days have passed.<br>Initiating work on the Plex server.</description>
-  <link>https://brokenitguy.com</link>
-  <guid></guid>
- </item>
- <item>
-  <title>Update: No Date</title>
-  <description>Developer took a personal leave of absence due to physical discomfort and lack of focus.<br>Normal operations will resume shortly.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
  </item>
