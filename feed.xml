@@ -7,6 +7,12 @@
  <language>en-us</language>
  <item>
   <title>Update: No Date</title>
+  <description>Media server has been successfully deployed. <br>While there are occasional container crashes, Plex remains operational and stable.</description>
+  <link>https://brokenitguy.com</link>
+  <guid></guid>
+ </item>
+ <item>
+  <title>Update: No Date</title>
   <description>Successfully resolved lingering networking and VPN issues. <br>Leveraged AI assistance through iterative prompting to achieve a functional state for these services.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
@@ -56,12 +62,6 @@
  <item>
   <title>Update: No Date</title>
   <description>Sent an email to the TNCA school principal regarding the policy on AI usage accusations.<br>The current policy allows teachers to accuse students of AI use without proof.<br>Students facing three such accusations risk expulsion, a policy deemed problematic.</description>
-  <link>https://brokenitguy.com</link>
-  <guid></guid>
- </item>
- <item>
-  <title>Update: No Date</title>
-  <description>Posted on social media to announce a few days have passed.<br>Initiating work on the Plex server.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
  </item>
