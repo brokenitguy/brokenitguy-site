@@ -1,5 +1,17 @@
 [
     {
+        "date": "2026-01-27 01:10:14",
+        "status": "SUCCESS",
+        "title": "VM Monitoring Infrastructure & Pinut Server Deployment",
+        "content": "Yesterday, a Windows Server was established to host a monitoring server.<br>This server will display the health of all VMS on a dedicated screen.<br>Today, a Pinut server was built.",
+        "tags": [
+            "#infrastructure",
+            "#monitoring",
+            "#deployment",
+            "#servers"
+        ]
+    },
+    {
         "date": "2026-01-24 16:12:42",
         "status": "SUCCESS",
         "title": "Media Server Stability Improvements and Plex Integration",

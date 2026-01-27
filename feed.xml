@@ -7,6 +7,12 @@
  <language>en-us</language>
  <item>
   <title>Update: No Date</title>
+  <description>Yesterday, a Windows Server was established to host a monitoring server.<br>This server will display the health of all VMS on a dedicated screen.<br>Today, a Pinut server was built.</description>
+  <link>https://brokenitguy.com</link>
+  <guid></guid>
+ </item>
+ <item>
+  <title>Update: No Date</title>
   <description>Media server has been successfully deployed. <br>While there are occasional container crashes, Plex remains operational and stable.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
@@ -56,12 +62,6 @@
  <item>
   <title>Update: No Date</title>
   <description>Investigating intermittent issues with AT&T network connectivity.<br>Initial reports indicate a potential network congestion event impacting service reliability.</description>
-  <link>https://brokenitguy.com</link>
-  <guid></guid>
- </item>
- <item>
-  <title>Update: No Date</title>
-  <description>Sent an email to the TNCA school principal regarding the policy on AI usage accusations.<br>The current policy allows teachers to accuse students of AI use without proof.<br>Students facing three such accusations risk expulsion, a policy deemed problematic.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
  </item>
