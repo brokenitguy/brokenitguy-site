@@ -1,8 +1,8 @@
-# 💀 BrockenITGuy | System Reboot
+# 💀 BrokenITGuy | System Reboot
 
 > **"System currently offline for critical maintenance."**
 
-This is the personal landing page for **BrockenITGuy**. The site is designed around the concept of a "Hard Reset"—paralleling a journey of physical recovery (spinal fusion surgery) with a professional career reboot in the tech industry.
+This is the personal landing page and technical portfolio for **BrokenITGuy**. The site is a living document of a "Hard Reset"—paralleling a journey of physical recovery from spinal fusion surgery with a professional career reboot in the IT industry.
 
 The aesthetic merges **biological fragility** (X-rays, organic curves) with **digital rigidity** (Terminal lines, server racks, monospace fonts).
 
@@ -10,151 +10,57 @@ The aesthetic merges **biological fragility** (X-rays, organic curves) with **di
 
 ## 🎨 Design System & Theme
 
-The UI is built to mimic an old-school CRT terminal monitor sitting in a modern data center.
+The UI mimics an old-school CRT terminal monitor sitting in a modern data center.
 
 ### 1. The Color Palette
-We use a high-contrast dark mode palette derived directly from the personal logo:
+Derived directly from the brand identity to maintain a high-contrast, late-night sysadmin vibe:
 
-* **`#0d0d0d` (Void Black)**: The background canvas. Darker than standard black to reduce eye strain.
-* **`#00A896` (Primary Teal)**: Represents the "System/Tech." Used for borders, command prompts, and the hardware elements in the logo.
-* **`#F2A900` (Alert Orange)**: Represents "Caution/Work in Progress." Used for system alerts, loading bars, and status indicators.
-* **`#F2E8D5` (Text Cream)**: Represents the "Human" element. Used for main reading text because it is warmer and softer than pure white.
+* **`#0d0d0d` (Void Black)**: The background canvas.
+* **`#00d1b2` (Primary Teal)**: Represents the "System." Used for borders and prompts.
+* **`#39ff14` (Success Green)**: Used for the live "System Uptime" ticker.
+* **`#e0e0e0` (Text Cream)**: The "Human" element. Softer than pure white for readability.
 
-### 2. The Visuals
-* **Background**: A composite image (`background.png`) merging a spinal fusion X-ray on the left with a server rack data stream on the right.
-* **Scanlines**: A CSS overlay creates a subtle "interlaced video" effect to mimic a physical monitor screen.
-* **Transparency**: The terminal window uses 90% opacity, allowing the "tech backbone" (the server image) to be visible through the interface.
-
----
-
-## 🚀 How to Maintain & Update
-
-### Standard Update Routine
-Whenever you make changes to the code or swap an image, use these three commands in your terminal:
-
-```bash
-# 1. Stage the changes
-git add .
-
-# 2. Save the version with a note
-git commit -m "Description of what you changed"
-
-# 3. Publish to the live internet
-git push
-
-
-
-Code Snippets (Cheat Sheet)
-Use these snippets if you need to fix the layout or adjust the design later.
-
-
-1. The "Flexbox" Social Row
-What it does: Forces all social media buttons to sit in a single, centered line. How to tweak: Change gap: 10px to make buttons further apart.
-
-.social-links {
-    display: flex;           /* Enables the row layout */
-    justify-content: center; /* Centers items horizontally */
-    flex-wrap: wrap;         /* Allows wrapping only on tiny mobile screens */
-    gap: 10px;               /* The space between each button */
-    margin-top: 30px;        /* Spacing from the text above */
-}
-
-2. The Background "Pin"
-What it does: Ensures the X-ray spine is always visible on the left side of the screen, regardless of monitor size. How to tweak: Change left center to center center if you want the image dead-centered.
-
-body {
-    background-image: url('background.png');
-    background-size: cover;          /* Forces image to cover the full screen */
-    background-position: left center; /* PINS the image to the left edge */
-    background-attachment: fixed;    /* Prevents image from scrolling with text */
-}
-
-3. The "See-Through" Terminal
-What it does: Makes the black box slightly transparent. How to tweak: The last number 0.9 is the opacity. 1.0 is solid black; 0.5 is ghost-like.
-
-.terminal-window {
-    /* R=10, G=10, B=10 (Black), A=0.9 (Opacity) */
-    background-color: rgba(10, 10, 10, 0.9);
-}
-
-01/02/2025
-
-# 🛠️ The BrokenITguy Project
-
-![Status](https://img.shields.io/badge/System_Status-ONLINE-success?style=for-the-badge&logo=github)
-![Uptime](https://img.shields.io/badge/Uptime-99.9%25-blue?style=for-the-badge&logo=linux)
-![Pain Level](https://img.shields.io/badge/Pain_Level-CRITICAL-red?style=for-the-badge&logo=activitypub)
-
-**Welcome to the digital recovery room.** This repository hosts the source code for [BrokenITguy.com](https://brokenitguy.com), a live documentation of my journey returning to the IT world after a 10-year medical hiatus. It serves as both a technical portfolio and a personal accountability log.
-
-> *"I have more titanium in my spine than in my server rack. The hardware is broken, but the code is clean."*
+### 2. Visual Layout
+* **Background**: A composite image (`background.png`) merging a spinal fusion X-ray with a server rack data stream.
+* **Transparency**: The terminal sidebar uses **65% opacity**, ensuring the "backbone" (the X-ray) is visible through the interface.
+* **Responsiveness**: The layout automatically shifts to a full-width mobile view for accessibility on all devices.
 
 ---
 
-## 🏗️ Architecture & Tech Stack
-
-This site is built to be lightweight, automated, and maintenance-free so I can focus on the backend lab work.
+## 🏗️ Technical Architecture
 
 | Component | Technology | Description |
 | :--- | :--- | :--- |
-| **Frontend** | HTML5 / CSS3 | "Matrix/Terminal" aesthetic with scanlines and glow effects. No heavy JS frameworks. |
-| **Hosting** | GitHub Pages | Static hosting directly from this repo. |
-| **Automation** | Python 3 | Custom script (`update.py`) to parse raw text notes into JSON. |
-| **Versioning** | Git / GitHub | Automated pushes via custom shell scripts. |
-| **Lab Hardware** | Proxmox / MSI / UDM | The physical infrastructure being documented. |
+| **Frontend** | HTML5 / CSS3 | Static, lightweight terminal-style interface. |
+| **Hosting** | Netlify / GitHub | Automated deployment from the main repository. |
+| **Interactivity** | Netlify Forms | Backend-less suggestion box handling. |
+| **Automation** | Python 3 | Custom script (`update.py`) to parse unformatted notes into JSON. |
 
 ---
 
-## 🤖 The "Zero-Friction" Automation System
+## 🚀 Key Features & Automation
 
-Because I can't spend hours formatting HTML every day, I built a custom Python automation pipeline.
+### 1. Descriptive System Uptime
+The site features a live JavaScript ticker hardcoded to start from the domain purchase on **March 19, 2024**. It calculates and displays time in a human-readable **"X Days, Y Hours, Z Mins"** format to quantify the resilience of the reboot.
 
-### How it works:
-1.  **Input:** I dump raw, unformatted brain-dumps into a local text file: `what i am doing.txt`.
-2.  **Processing:** The `update.py` script reads this file and uses Google's Gemini API to:
-    * Extract the technical context.
-    * Format it into a "System Log" style JSON entry.
-    * Add humor and "BrokenITguy" personality tags.
-3.  **Deployment:** A custom local shell script (`Update_Site.command`) automatically:
-    * Runs the Python processor.
-    * Updates `logs.json`.
-    * Commits changes to Git.
-    * Pushes to GitHub Pages.
-    * **Result:** The live site updates in < 30 seconds with zero coding required.
+### 2. Suggestion Feed [Packet Transmission]
+A fixed widget in the lower-right corner allows for direct feedback. It uses `data-netlify="true"` to capture messages without a database and is configured to trigger email notifications to `brokenitguy@proton.me`.
+
+### 3. Root-Relative Navigation
+To solve pathing errors between local VS Code environments and live production, all navigation uses relative paths (e.g., `href="log.html"`). This ensures CSS and background images remain stable during navigation.
 
 ---
 
-## 📸 Screenshots
+## 🛠️ Maintenance Routine
 
-### The "Matrix" Interface
-*A dark-mode, terminal-inspired design to match the late-night sysadmin vibe.*
-![Interface Preview](https://github.com/acerhd/brokenitguy-site/blob/main/Screenshot%202026-01-01%20at%2018.06.47.jpg?raw=true)
+To update the site or push new logs, execute the following in the project terminal:
 
-### The Logs
-*Automated entries tracking the wins, the fails, and the physical struggle.*
-![Logs Preview](https://github.com/acerhd/brokenitguy-site/blob/main/Screenshot%202026-01-01%20at%2018.07.19.jpg?raw=true)
+```bash
+# Stage the changes
+git add .
 
----
+# Save the version with a note
+git commit -m "Update system logs"
 
-## 🚧 Current Lab Roadmap (2026)
-
-- [x] **Phase 1:** Site Infrastructure & Automation (Completed Jan 2026)
-- [ ] **Phase 2:** UDM Firewall Ruleset Purge (In Progress - 50%)
-- [ ] **Phase 3:** Proxmox High Availability Cluster
-- [ ] **Phase 4:** Cisco Router Virtualization (C8000V)
-- [ ] **Phase 5:** "The Big Migration" (Moving 40TB ZFS Pool)
-
----
-
-## 🤝 Connect
-
-I am documenting this mess live. If you want to see me break things (and occasionally fix them), follow the feeds:
-
-* 🌐 **Website:** [brokenitguy.com](https://brokenitguy.com)
-* 👔 **LinkedIn:** [Hugo D.](https://www.linkedin.com/) (Let's connect!)
-* 🐦 **X (Twitter):** [@brokenitguy](https://x.com/brokenitguy)
-* 📘 **Facebook:** [BrokenITguy](https://facebook.com/brokenitguy)
-
----
-
-*© 2026 BrokenITguy Infrastructure. All rights reserved. No servers were harmed in the making of this README, but several coffees were destroyed.*
+# Push to live production
+git push
