@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrokenITGuy | System Logs</title>
-    <meta property="og:title" content="BrokenITGuy | System Logs">
-    <meta property="og:description" content="Daily engineering logs and system updates.">
-    <meta name="theme-color" content="#00A896">
+    <title>BrokenITGuy | Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
     <style>
         :root {
-            --primary-teal: #00A896;
-            --alert-orange: #F2A900;
-            --text-cream: #F2E8D5;
+            --primary-teal: #00d1b2;
             --bg-black: #0d0d0d;
+            --text-main: #e0e0e0;
+            --mono-font: 'Fira Code', monospace;
+            --body-font: 'Inter', sans-serif;
+            --success-green: #39ff14;
         }
 
         body {
@@ -21,123 +23,153 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            color: var(--text-cream);
-            font-family: 'Courier New', Courier, monospace;
             margin: 0;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start; 
             min-height: 100vh;
+            color: var(--text-main);
         }
 
-        .terminal-window {
-            background-color: rgba(10, 18, 10, 0.95);
+        .terminal-sidebar {
+            width: 100%;
+            max-width: 550px;
+            background: rgba(0, 0, 0, 0.65); /* 65% transparency */
+            border-right: 1px solid rgba(0, 209, 178, 0.3);
+            height: 100vh;
+            overflow-y: auto;
             padding: 40px;
-            border-radius: 5px;
-            box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
-            max-width: 800px;
-            width: 90%;
-            border: 2px solid var(--primary-teal);
-            margin-top: 50px;
-            margin-bottom: 50px;
-            position: relative;
-        }
-
-        /* Scanline effect */
-        .terminal-window::before {
-            content: " ";
-            display: block;
-            position: absolute;
-            top: 0; left: 0; bottom: 0; right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-            z-index: 2;
-            background-size: 100% 2px, 3px 100%;
-            pointer-events: none;
-        }
-
-        .nav-bar {
-            border-bottom: 1px dashed var(--primary-teal);
-            padding-bottom: 15px;
-            margin-bottom: 20px;
+            box-sizing: border-box;
+            backdrop-filter: blur(10px);
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
         }
+
+        @media (max-width: 768px) {
+            body { display: block; }
+            .terminal-sidebar { max-width: 100%; height: auto; border-right: none; background: rgba(0, 0, 0, 0.85); }
+        }
+
+        .logo-section img { width: 100%; max-width: 280px; margin-bottom: 10px; }
+        .loading-bar { width: 100%; height: 12px; border: 1px solid var(--primary-teal); margin-bottom: 5px; border-radius: 2px; }
+        .loading-fill { width: 75%; height: 100%; background: var(--primary-teal); box-shadow: 0 0 10px var(--primary-teal); }
+
+        .meta-data { font-family: var(--mono-font); font-size: 0.75rem; color: var(--primary-teal); margin-bottom: 25px; line-height: 1.6; }
+        .meta-data span { color: #888; }
+        #uptime-ticker { color: var(--success-green); font-weight: bold; }
+
+        /* The specific navigation link style */
+        .nav-item { 
+            font-family: var(--mono-font); 
+            text-decoration: none; 
+            color: var(--primary-teal); 
+            font-size: 1rem; 
+            display: inline-block; 
+            margin-bottom: 20px; 
+            font-weight: bold; 
+            border-bottom: 1px solid transparent;
+        }
+        .nav-item:hover { color: #fff; border-bottom: 1px solid var(--primary-teal); }
+
+        .story-content { font-family: var(--body-font); line-height: 1.7; font-size: 1rem; border-top: 1px dashed rgba(0, 209, 178, 0.2); padding-top: 25px; flex-grow: 1; }
+        .story-content p { margin-bottom: 18px; }
         
-        .nav-link {
+        .highlight-bullets { list-style: none; padding: 0; font-family: var(--mono-font); color: var(--primary-teal); font-size: 0.85rem; margin: 20px 0; }
+        .highlight-bullets li { margin-bottom: 10px; }
+
+        .social-footer {
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            gap: 20px;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+        .social-link { color: var(--primary-teal); font-size: 1.4rem; transition: 0.3s; }
+        .social-link:hover { color: #fff; transform: translateY(-3px); }
+
+        /* New Feedback Box */
+        .feedback-box {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid var(--primary-teal);
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-family: var(--mono-font);
+            font-size: 0.7rem;
             color: var(--primary-teal);
             text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9rem;
+            backdrop-filter: blur(5px);
+            z-index: 1000;
         }
-        .nav-link:hover { color: var(--alert-orange); }
-
-        .log-entry-container {
-            border-left: 2px solid var(--primary-teal);
-            padding-left: 20px;
-            margin-bottom: 30px;
-            position: relative;
-        }
-
-        .log-meta { font-size: 0.8rem; color: #666; margin-bottom: 5px; }
-        .log-status-SUCCESS { color: #00ff00; }
-        .log-status-WARNING { color: var(--alert-orange); }
-        .log-status-CRITICAL { color: #ff0000; }
-
-        .log-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--text-cream);
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-
-        .log-content { line-height: 1.6; margin-bottom: 10px; }
-        .log-tags { font-size: 0.8rem; color: var(--primary-teal); opacity: 0.8; }
-        
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        .feedback-box:hover { background: var(--primary-teal); color: #000; }
     </style>
 </head>
 <body>
-    <div class="terminal-window">
-        <div class="nav-bar">
-            <span>> DIR: /VAR/LOG/SYSADMIN</span>
-            <a href="index.html" class="nav-link">[ ../RETURN_ROOT ]</a>
+
+    <div class="terminal-sidebar">
+        <div class="logo-section">
+            <img src="logo.png" alt="Broken IT Guy">
+            <div class="loading-bar"><div class="loading-fill"></div></div>
         </div>
 
-        <h1>> CAPTAIN'S LOG <span style="animation: blink 1s infinite;">_</span></h1>
-        
-        <div id="log-feed">
-            <div style="color: #666;">> MOUNTING FILESYSTEM...</div>
+        <div class="meta-data">
+            <div><span>> SYSTEM_REBOOT_INITIATED:</span> <span id="uptime-ticker">00:00:00:00</span></div>
+            <div><span>> USER:</span> Hugo (BrokenITGuy)</div>
+            <div><span>> EXEC:</span> WHOAMI.TXT</div>
+        </div>
+
+        <a href="log.html" class="nav-item">>> ACCESS_SYSTEM_LOGS [CLICK_HERE]</a>
+
+        <div class="story-content">
+            <p><strong>I am Hugo, the BrokenITGuy.</strong></p>
+            <p>After a decade-long hiatus from IT due to a series of surgeries—which felt like they came with a discount code—I vanished from the industry. Just... vanished.</p>
+            <p>But turns out sitting on the couch felt worse than the actual pain, so here we are. I'm thinking and trying to rebuild something of a career I thought was done with.</p>
+            <p>I'm also homeschooling my son, who has ADHD as creatively destructive as mine, gaming with him when my spine isn't cosplaying as a pinched nerve, and learning what it means to actually do things again.</p>
+            
+            <ul class="highlight-bullets">
+                <li>⚡ Me attempting homelab networking at 3 am, fueled by Pepsi and pure stubbornness.</li>
+                <li>⚡ Cert grinds that humble me weekly.</li>
+                <li>⚡ A kid who laughs at my pain in the best way.</li>
+                <li>⚡ Me figuring out how to be alive again.</li>
+            </ul>
+
+            <p>No filters. No fake motivation. Just real life, broken hardware, and the beautiful disaster of trying.</p>
+        </div>
+
+        <div class="social-footer">
+            <a href="https://instagram.com/brokenitguy" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/brokenitguy_" class="social-link" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://facebook.com/BrokenITguy" class="social-link" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://threads.net/@brokenitguy" class="social-link" target="_blank"><i class="fab fa-threads"></i></a>
+            <a href="https://github.com/hugod" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:brokenitguy@proton.me" class="social-link"><i class="fas fa-envelope"></i></a>
         </div>
     </div>
 
+    <a href="mailto:brokenitguy@proton.me?subject=Feedback" class="feedback-box">
+        [ SUGGESTIONS_OR_FEEDBACK ]
+    </a>
+
     <script>
-        fetch('logs.json')
-            .then(response => response.json())
-            .then(data => {
-                const feed = document.getElementById('log-feed');
-                feed.innerHTML = ''; 
-
-                // Sort: Newest First
-                data.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-                data.forEach(entry => {
-                    const entryDiv = document.createElement('div');
-                    entryDiv.className = 'log-entry-container';
-                    entryDiv.innerHTML = `
-                        <div class="log-meta">
-                            DATE: ${entry.date} | STATUS: <span class="log-status-${entry.status}">${entry.status}</span>
-                        </div>
-                        <div class="log-title">${entry.title}</div>
-                        <div class="log-content">${entry.content}</div>
-                        <div class="log-tags">${entry.tags.join(' ')}</div>
-                    `;
-                    feed.appendChild(entryDiv);
-                });
-            })
-            .catch(error => {
-                document.getElementById('log-feed').innerHTML = '<span style="color:red;">> ERROR: /VAR/LOG NOT FOUND (404)</span>';
-            });
+        const rebootDate = new Date("2024-03-19T00:00:00");
+        function updateUptime() {
+            const now = new Date();
+            const diff = now - rebootDate;
+            if (diff < 0) return;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const mins = Math.floor((diff / (1000 * 60)) % 60);
+            const secs = Math.floor((diff / 1000) % 60);
+            
+            document.getElementById("uptime-ticker").innerText = 
+                String(days).padStart(2, '0') + ":" + String(hours).padStart(2, '0') + ":" + 
+                String(mins).padStart(2, '0') + ":" + String(secs).padStart(2, '0');
+        }
+        setInterval(updateUptime, 1000);
+        updateUptime();
     </script>
 </body>
 </html>

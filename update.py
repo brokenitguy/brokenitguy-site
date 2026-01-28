@@ -21,10 +21,10 @@ except FileNotFoundError:
     print("CRITICAL ERROR: secrets.json not found!")
     exit()
 
-# Initialize Client
+# Initialize Gemini Client
 client = genai.Client(api_key=API_KEY)
 
-# --- HELPER FUNCTION: GENERATE RSS FEED ---
+# --- HELPER: GENERATE RSS FEED ---
 def generate_rss(all_logs):
     """Generates an RSS feed from the logs.json data."""
     rss_content = """<?xml version="1.0" encoding="UTF-8" ?>
@@ -35,22 +35,18 @@ def generate_rss(all_logs):
  <link>https://brokenitguy.com</link>
  <language>en-us</language>
 """
-    # Loop through logs and add them as items
-    # We take the last 10 entries to keep the feed clean
     for entry in all_logs[:10]:
         rss_content += f""" <item>
-  <title>Update: {entry.get('timestamp', 'No Date')}</title>
+  <title>{entry.get('title', 'Update')}</title>
   <description>{entry.get('content', 'No Content')}</description>
   <link>https://brokenitguy.com</link>
-  <guid>{entry.get('timestamp', '')}</guid>
+  <guid>{entry.get('date', '')}</guid>
  </item>
 """
     rss_content += "</channel>\n</rss>"
     
-    # Write the file to disk
     with open(FEED_FILE, "w") as f:
         f.write(rss_content)
-    print("✅ feed.xml generated successfully.")
 
 # --- MAIN UPDATE SCRIPT ---
 def update_logs():
@@ -63,23 +59,21 @@ def update_logs():
         except:
             last_pos = 0
 
-    new_content = ""
-    current_pos = 0
-    
     try:
         with open(INPUT_FILE, "r") as f:
             f.seek(last_pos)
-            new_content = f.read()
+            new_content = f.read().strip()
             current_pos = f.tell()
     except FileNotFoundError:
         print("Waiting for input file...")
         return
 
-    # If nothing new, stop silently
-    if not new_content.strip():
+    # GATEKEEPER: Stop if there is no new text to process
+    if not new_content:
+        print("⏸️ No new content since last run. Skipping build to save tokens.")
         return
 
-    print(f"🔹 New content detected: {len(new_content)} chars")
+    print(f"🔹 New content detected: {len(new_content)} chars. Processing batch...")
 
     # 2. READ EXISTING LOGS
     existing_data = []
@@ -90,21 +84,24 @@ def update_logs():
         except json.JSONDecodeError:
             existing_data = []
 
-    # 3. GENERATE ENTRY WITH GEMINI
-    # (Using a standard prompt to format the raw text into a clean log entry)
+    # 3. GENERATE ENTRIES WITH GEMINI
     try:
         response = client.models.generate_content(
-            model="gemini-2.5-flash-lite",
+            model="gemini-2.0-flash-lite",
             contents=f"""
-            Format the following raw text into a clean JSON log entry for a developer changelog.
-            Return ONLY raw JSON (no markdown formatting).
-            Format:
+            I have a list of raw terminal notes with timestamps. 
+            Format EACH separate timestamped note into its own JSON object.
+            Return a JSON LIST of objects only. No markdown formatting.
+            
+            Use the 'BrokenITGuy' persona: gritty, technical, and honest.
+            
+            Format for each object:
             {{
-                "date": "{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
+                "date": "YYYY-MM-DD HH:MM:SS",
                 "status": "SUCCESS",
-                "title": "GENERATE_A_COOL_TECH_TITLE_HERE",
-                "content": "Summarized version of the update (use <br> for new lines)",
-                "tags": ["#automated", "#update", "#brokenitguy"]
+                "title": "TECH_TITLE",
+                "content": "SUMMARIZED_CONTENT (use <br> for new lines)",
+                "tags": ["#automated", "#brokenitguy"]
             }}
             
             Raw Text:
@@ -112,38 +109,43 @@ def update_logs():
             """
         )
         
-        # Clean up response to ensure it's valid JSON
+        # Clean response and parse JSON
         cleaned_response = response.text.replace("```json", "").replace("```", "").strip()
-        new_entry = json.loads(cleaned_response)
+        new_entries = json.loads(cleaned_response)
         
-        # Add to the TOP of the list
-        updated_data = [new_entry] + existing_data
+        # Ensure it's a list even if only one note was processed
+        if isinstance(new_entries, dict):
+            new_entries = [new_entries]
+
+        if not new_entries:
+            print("⚠️ AI produced no valid entries. Stopping.")
+            return
+
+        # Merge with old logs and sort by date descending
+        updated_data = new_entries + existing_data
+        updated_data.sort(key=lambda x: x['date'], reverse=True)
 
     except Exception as e:
-        print(f"⚠️ AI Generation failed: {e}")
+        print(f"⚠️ AI Generation or Parsing failed: {e}")
         return
 
-    # 4. SAVE EVERYTHING
-    
-    # Save JSON Logs
+    # 4. SAVE EVERYTHING LOCALLY
     with open(LOGS_FILE, "w") as f:
         json.dump(updated_data, f, indent=4)
-    print("✅ logs.json updated.")
 
-    # Generate RSS Feed (The new fix!)
     generate_rss(updated_data)
 
-    # Update Marker (so we don't re-read the same text)
+    # Save the marker so we don't re-process these notes
     with open(MARKER_FILE, "w") as f:
         f.write(str(current_pos))
 
-    # 5. AUTO-PUSH TO GITHUB
-    print(">> New log added. Pushing to GitHub...")
+    # 5. PUSH TO GITHUB
+    print(">> Syncing batch to GitHub...")
     try:
-        subprocess.run(["git", "add", "logs.json", "feed.xml"], check=True) # Added feed.xml to git add
-        subprocess.run(["git", "commit", "-m", "Auto-update logs & feed"], check=True)
+        subprocess.run(["git", "add", "logs.json", "feed.xml", ".log_marker"], check=True)
+        subprocess.run(["git", "commit", "-m", "Batch update logs via scheduled task"], check=True)
         subprocess.run(["git", "push", "origin", "main"], check=True)
-        print(">> SUCCESS: Website updated!")
+        print("✅ SUCCESS: Website updated and tokens saved!")
     except subprocess.CalledProcessError as e:
         print(f"!! Git Error: {e}")
 
